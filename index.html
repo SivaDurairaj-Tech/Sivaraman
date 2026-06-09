@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hello World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .screen {
+      background: #111;
+      border: 2px solid #00ff88;
+      border-radius: 12px;
+      padding: 48px 64px;
+      text-align: center;
+      box-shadow: 0 0 40px #00ff8844;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .screen::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00ff88, transparent);
+      animation: scan 2s linear infinite;
+    }
+
+    @keyframes scan {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .label {
+      color: #00ff88;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+
+    .hello {
+      font-size: 52px;
+      font-weight: 700;
+      color: #00ff88;
+      text-shadow: 0 0 20px #00ff8866;
+      border-right: 3px solid #00ff88;
+      animation: blink-cursor 1s step-end infinite;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    @keyframes blink-cursor {
+      0%, 100% { border-right-color: #00ff88; }
+      50%       { border-right-color: transparent; }
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #00ff8844;
+      margin: 16px auto;
+    }
+
+    .tamil {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      font-size: 28px;
+      color: #aaffcc;
+      opacity: 0.85;
+      letter-spacing: 2px;
+    }
+
+    .prompt {
+      color: #00ff8855;
+      font-size: 12px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="screen">
+    <div class="label">output</div>
+    <p class="hello">Hello, World!</p>
+    <div class="divider"></div>
+    <p class="tamil">வணக்கம், உலகம்!</p>
+    <p class="prompt">// program executed successfully ✓</p>
+  </div>
+</body>
+</html>
